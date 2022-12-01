@@ -8,11 +8,18 @@ h1 {
     font-size: 48px;
 }
 
-#player_indicator {
-    font-size: 30px;
-    color: rgb(2, 173, 173);
-    text-align: center;
+button {
+    border-radius: 50px;
+    padding: 10px;
+    border-color: black;
+    border: 1px;
+    border-style: solid;
+    font-size: 16px;
+    color: purple;
+    background-color: beige;
+    font-weight: bold;
 }
+
 
 table {
     margin-left: auto;
@@ -29,4 +36,16 @@ table, td {
 td {
     width: 200px;
     height: 200px;
+}
+
+#restart_container {
+    text-align: center;
+    margin: 20px;
+    
+}
+
+#player_indicator {
+    font-size: 30px;
+    color: rgb(2, 173, 173);
+    text-align: center;
 }

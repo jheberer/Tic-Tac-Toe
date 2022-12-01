@@ -4,6 +4,7 @@ let playerTurn = ['X'];
 let numberOfMoves = 0;
 const gameBoard = [[null,null,null],[null,null,null],[null,null,null]];
 
+
         
 // function checkWinCondition (gameboard) {
 //     // 3 across
@@ -17,6 +18,11 @@ const gameBoard = [[null,null,null],[null,null,null],[null,null,null]];
 
 //     // 2 diagonals
 // }
+
+window.onload = () => {
+    const restartButton = document.getElementById('restart_button');
+    restartButton.addEventListener('click', restartGame);
+}
 
 function addX (element) {
     const newX = document.createElement('img');
@@ -40,7 +46,6 @@ function locationValidator(element) {
     }
 }
 
-
 // function updateGameBoard (gameBoard, targetSquare) {
 
 // }
@@ -62,3 +67,11 @@ function addMarker (element, turnIndicator) {
         }
     }
 }
+
+
+function restartGame () {
+    window.alert('Restarting game!')
+    location.reload();
+}
+
+
