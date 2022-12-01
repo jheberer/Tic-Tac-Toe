@@ -1,0 +1,32 @@
+body {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+h1 {
+    text-align: center;
+    color: rgb(91, 1, 133);
+    font-size: 48px;
+}
+
+#player_indicator {
+    font-size: 30px;
+    color: rgb(2, 173, 173);
+    text-align: center;
+}
+
+table {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+table, td {
+    border: 3px solid white;
+    border-collapse: collapse;
+    background-color: steelblue;
+}
+
+td {
+    width: 200px;
+    height: 200px;
+}

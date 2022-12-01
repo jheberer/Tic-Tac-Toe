@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic Tac Toe</title>
+    <script src = '../js/tic_tac_toe.js'></script>
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+
+<body>
+
+    <h1>TIC-TAC-TOE</h1>
+
+    <p id="player_indicator">Player's Turn: X</p>
+
+    <table>
+        <tr id="top_row">
+            <td class="left_cell" onclick="addMarker(this, playerTurn)">
+                
+            </td>
+
+            <td class="middle_cell " onclick="addMarker(this, playerTurn)">
+
+            </td>
+                
+            <td class="right_cell" onclick="addMarker(this, playerTurn)">
+
+            </td>
+        </tr>
+
+        <tr id="middle_row">
+            <td class="left_cell" onclick="addMarker(this, playerTurn)">
+
+            </td>
+
+            <td class="middle_cell" onclick="addMarker(this, playerTurn)">
+                <!-- <img src="../images/circle.png" alt="circle"> -->
+            </td>
+
+            <td class="right_cell" onclick="addMarker(this, playerTurn)">
+
+            </td>
+        </tr>
+
+        <tr id="bottom_row">
+            <td class="left_cell" onclick="addMarker(this, playerTurn)">
+
+            </td>
+
+            <td class="middle_cell" onclick="addMarker(this, playerTurn)">
+
+            </td>
+
+            <td class="right_cell" onclick="addMarker(this, playerTurn)">
+
+            </td>
+        </tr>
+
+    </table>
+
+</body>
+</html>
