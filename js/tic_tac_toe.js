@@ -1,7 +1,6 @@
 'use strict';
 
-
-let gameParameters = {playerTurn: 'X', numberOfMoves:0}
+let gameParameters = {playerTurn: 'X', numberOfMoves:0, gameOver:false}
 const gameBoard = [[null,null,null],[null,null,null],[null,null,null]];
 
 // function uses global variable for gameboard. maybe update this later
@@ -30,6 +29,11 @@ function updateGameBoard(cell, shape) {
 }
 
 
+// function ends the game
+function endGame () {
+    gameParameters.gameOver = true;
+}
+
 // this function uses global variable. should probably change it
 function checkWinCondition (parameters) {
     // 3 across
@@ -37,24 +41,59 @@ function checkWinCondition (parameters) {
     for (let row of gameBoard) {
         if (row.every(square => square === 'X')) {
             window.alert('X player has won!');
-            restartGame();
+            endGame();
             break;
         }
         else if (row.every(square => square === 'O')) {
             window.alert('O player has won!');
-            restartGame();
+            endGame();
             break;
         }
     }
 
     // 3 down
-    const temp_arr = [];
+
+    for (let i = 0; i < 3; i++) {
+        const temp_arr = [];
+        for (let row of gameBoard) {
+            temp_arr.push(row[i])
+        }
+    
+        if (temp_arr.every(square => square === 'X')) {
+            window.alert('X player has won!');
+                endGame();
+                break;
+        }
+        else if (temp_arr.every(square => square === 'O')) {
+            window.alert('O player has won!');
+            endGame();
+            break;
+        }
+    }
 
     // 2 diagonals
+    // it's fine to hardcode these for now but a dynamic solution would be interesting
+    if (gameBoard[0][0]==='X' && gameBoard[1][1]==='X' && gameBoard[2][2]==='X') {
+        window.alert('X player has won!');
+        endGame();
+    }
+    if (gameBoard[0][0]==='O' && gameBoard[1][1]==='O' && gameBoard[2][2]==='O') {
+        window.alert('O player has won!');
+        endGame();
+    }
+    if (gameBoard[0][2]==='X' && gameBoard[1][1]==='X' && gameBoard[2][0]==='X') {
+        window.alert('X player has won!');
+        endGame();
+    }
+    if (gameBoard[0][2]==='O' && gameBoard[1][1]==='O' && gameBoard[2][0]==='O') {
+        window.alert('O player has won!');
+        endGame();
+    }
 
     // draw
-    if (parameters.numberOfMoves === 9) {
+    if (parameters.numberOfMoves === 9 && !gameParameters.gameOver) {
         window.alert('Game has ended in a draw! Please play again.')
+        endGame();
     }
 }
 
@@ -106,6 +145,10 @@ function locationValidator(element) {
  * @param {object} gameParameters       parameters tracking gamestate
  */
 function addMarker (element, gameParameters) {
+    if (gameParameters.gameOver) {
+        window.alert('Game is over. Please play again.');
+        return;
+    }
     if (locationValidator(element)) {
         if (gameParameters.playerTurn === 'X') {
             addX(element);
